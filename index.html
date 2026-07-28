@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Loong Quant 量化交易工作台</title>
+  <title>量化交易工作台</title>
   <style>
     *{box-sizing:border-box}body{margin:0;background:#080d16;color:#dfe7f5;font:14px Arial,"Microsoft YaHei",sans-serif}.app{display:flex;min-height:100vh}
     aside{position:fixed;inset:0 auto 0 0;width:220px;padding:24px 16px;background:#101725;border-right:1px solid #273146}.brand{font-size:18px;font-weight:700;color:#fff;padding:0 10px 24px;border-bottom:1px solid #273146}.brand small{display:block;font-size:11px;color:#68758d;margin-top:5px}.group{margin:24px 10px 8px;color:#58657a;font-size:11px}.nav{display:block;padding:12px 14px;margin:3px 0;border-radius:9px;color:#a3aec0}.nav.active{background:#1d3155;color:#7da2ff}
@@ -18,7 +18,7 @@
 </head>
 <body>
 <div class="app">
-  <aside><div class="brand">Loong Quant<small>量化交易工作台</small></div><div class="group">核心功能</div><span class="nav active" data-page="dashboard">▦ 仪表盘</span><span class="nav" data-page="pool">◎ 股票池</span><span class="nav" data-page="signals">ϟ 信号处理</span><span class="nav" data-page="factors">◈ 模型 / 因子库</span><span class="nav" data-page="research">✦ AI 投研</span><div class="group">策略与交易</div><span class="nav" data-page="strategy">⚗ 策略研究</span><span class="nav" data-page="backtest">↶ 回测引擎</span><span class="nav" data-page="trade">￥ 模拟交易</span></aside>
+  <aside><div class="brand">量化<small>量化交易工作台</small></div><div class="group">核心功能</div><span class="nav active" data-page="dashboard">▦ 仪表盘</span><span class="nav" data-page="pool">◎ 股票池</span><span class="nav" data-page="signals">ϟ 信号处理</span><span class="nav" data-page="factors">◈ 模型 / 因子库</span><span class="nav" data-page="research">✦ AI 投研</span><div class="group">策略与交易</div><span class="nav" data-page="strategy">⚗ 策略研究</span><span class="nav" data-page="backtest">↶ 回测引擎</span><span class="nav" data-page="trade">￥ 模拟交易</span></aside>
   <main>
     <header class="head"><div><h1>量化交易仪表盘</h1><p>研究、信号、回测与模拟交易的一体化工作台</p></div><div class="actions"><span class="online" id="market">市场开放</span><small id="time">更新于 14:32:08</small><button class="refresh" onclick="scan()">↻ 刷新信号</button></div></header>
     <div id="dashboard" class="page"><section class="cards">
@@ -37,7 +37,7 @@
     </section>
     </div>
     <section id="module" class="module page hidden"></section>
-    <footer><span>● 系统运行正常 · 当前为模拟交易模式</span><span>Loong Quant Interactive v0.2</span></footer>
+    <footer><span>● 系统运行正常 · 当前为模拟交易模式</span><span>量化 · 交互版 v0.2</span></footer>
   </main>
 </div>
 <script>
