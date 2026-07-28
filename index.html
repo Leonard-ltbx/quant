@@ -116,6 +116,18 @@ function renderRealData(data){
     backtest?.querySelectorAll(".stats b").forEach(node=>node.textContent="--");
     const line=backtest?.querySelector(".line");if(line)line.style.opacity=".12";
     const base=backtest?.querySelector(".base");if(base)base.style.opacity=".12";
+    const legend=backtest?.querySelector(".legend");if(legend)legend.textContent="暂无真实回测结果";
+    const factorPanel=panels[0].querySelectorAll(".panel")[1];
+    const factorTitle=factorPanel?.querySelector(".title h2");
+    const factorSub=factorPanel?.querySelector(".title p");
+    if(factorTitle)factorTitle.textContent="因子分析";
+    if(factorSub)factorSub.textContent="尚未接入真实历史行情与财务因子";
+    factorPanel?.querySelectorAll(".factor b").forEach(node=>node.textContent="--");
+    factorPanel?.querySelectorAll(".bar i").forEach(node=>node.style.width="0");
+    const aiTitle=factorPanel?.querySelector(".ai b");
+    const aiText=factorPanel?.querySelector(".ai p");
+    if(aiTitle)aiTitle.textContent="AI 投研未接入";
+    if(aiText)aiText.textContent="当前仅提供真实行情和透明规则评分，不生成 AI 投资结论。";
   }
 
   const tbody=document.querySelector("#dashboard .table table tbody");
@@ -129,6 +141,18 @@ function renderRealData(data){
     const tableSub=document.querySelector("#dashboard .table .title p");
     if(tableTitle)tableTitle.textContent="真实行情规则评分";
     if(tableSub)tableSub.textContent=data.method||"公开行情字段规则评分";
+  }
+  const statusPanel=panels.length>1?panels[1].querySelectorAll(".panel")[1]:null;
+  if(statusPanel){
+    const statusTitle=statusPanel.querySelector(".title h2");
+    const statusSub=statusPanel.querySelector(".title p");
+    if(statusTitle)statusTitle.textContent="数据与分析状态";
+    if(statusSub)statusSub.textContent="仅已启用真实行情与规则评分";
+    const values=statusPanel.querySelectorAll(".status b");
+    const labels=["真实行情","规则评分","未接入","未接入"];
+    values.forEach((node,index)=>node.textContent=labels[index]||"未接入");
+    const runButton=statusPanel.querySelector(".run");
+    if(runButton){runButton.textContent="真实历史回测未接入";runButton.disabled=true;runButton.style.opacity=".55"}
   }
 }
 async function loadRealData(){
