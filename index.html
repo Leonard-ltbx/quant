@@ -59,5 +59,90 @@ function runResearch(){researchResult.innerHTML="<b>AI 研究摘要</b><br><br>�
 function runBacktest(){backtestResult.innerHTML="<b>回测完成</b>　累计收益 <span class='up'>+32.0%</span>　最大回撤 -8.4%　夏普比率 1.82　胜率 62.7%";notice("回测任务完成")}
 function placeOrder(){notice(`${tradeSide.value} ${tradeCode.value} 的模拟订单已提交`)}
 </script>
+<style>
+  .data-banner{display:flex;justify-content:space-between;gap:12px;margin-top:16px;padding:11px 14px;border:1px solid #4f7ff244;border-radius:10px;background:#4f7ff211;color:#91afff;font-size:12px}
+  .data-banner strong{color:#dfe7f5}.data-banner .warn{color:#ffbf47}
+  .down{color:#20d3a0}.neutral{color:#a3aec0}
+  @media(max-width:600px){.data-banner{flex-direction:column}}
+</style>
+<script>
+const REAL_DATA_URL="./data/market.json";
+function fmt(value,digits=2){return Number.isFinite(Number(value))?Number(value).toLocaleString("zh-CN",{minimumFractionDigits:digits,maximumFractionDigits:digits}):"--"}
+function signed(value){const n=Number(value);return Number.isFinite(n)?`${n>=0?"+":""}${n.toFixed(2)}%`:"--"}
+function escapeHtml(value){return String(value??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function ensureDataBanner(){
+  if(document.getElementById("realDataBanner"))return;
+  const banner=document.createElement("div");
+  banner.id="realDataBanner";banner.className="data-banner";
+  banner.innerHTML='<span><strong>真实行情</strong> · <span id="realSource">正在读取</span> · <span id="realUpdated">--</span></span><span class="warn">规则评分，不构成投资建议</span>';
+  document.querySelector(".head").insertAdjacentElement("afterend",banner);
+}
+function markUnavailable(){
+  ensureDataBanner();
+  document.getElementById("realSource").textContent="数据暂时不可用";
+  document.getElementById("market").textContent="行情更新失败";
+}
+function renderRealData(data){
+  ensureDataBanner();
+  document.getElementById("realSource").textContent=data.source||"公开行情";
+  document.getElementById("realUpdated").textContent=`更新 ${data.generated_at_display||"--"}`;
+  document.getElementById("time").textContent=`数据时间 ${data.generated_at_display||"--"}`;
+  document.getElementById("market").textContent="真实行情已连接";
+
+  const cards=document.querySelectorAll(".cards .card");
+  if(cards.length>=4){
+    cards[0].querySelector("small").textContent="真实行情数据";
+    cards[0].querySelector("b").textContent="已连接";
+    cards[0].querySelector("p").textContent=`腾讯财经 · 自选 ${data.watchlist_size||0} 只`;
+    const strong=(data.quotes||[]).filter(q=>q.score>=60).length;
+    cards[1].querySelector("small").textContent="规则评分偏强";
+    cards[1].querySelector("b").textContent=String(strong);
+    cards[1].querySelector("p").textContent="按公开行情字段计算";
+    cards[2].querySelector("small").textContent="策略实盘";
+    cards[2].querySelector("b").textContent="未接入";
+    cards[2].querySelector("p").textContent="目前没有真实交易策略运行";
+    cards[3].querySelector("small").textContent="交易账户";
+    cards[3].querySelector("b").textContent="未接入";
+    cards[3].querySelector("p").textContent="未连接券商或真实资金";
+  }
+
+  const panels=document.querySelectorAll("#dashboard > .grid");
+  if(panels.length){
+    const backtest=panels[0].querySelector(".panel");
+    const title=backtest?.querySelector(".title h2");
+    const subtitle=backtest?.querySelector(".title p");
+    if(title)title.textContent="策略回测指标";
+    if(subtitle)subtitle.textContent="尚未接入真实历史回测，以下指标不再展示";
+    backtest?.querySelectorAll(".stats b").forEach(node=>node.textContent="--");
+    const line=backtest?.querySelector(".line");if(line)line.style.opacity=".12";
+    const base=backtest?.querySelector(".base");if(base)base.style.opacity=".12";
+  }
+
+  const tbody=document.querySelector("#dashboard .table table tbody");
+  if(tbody){
+    tbody.innerHTML=(data.quotes||[]).map(q=>{
+      const change=Number(q.change_pct);
+      const cls=change>0?"up":change<0?"down":"neutral";
+      return `<tr><td><b>${escapeHtml(q.name)}</b><small>${escapeHtml(q.code)}</small></td><td><span class="score">${escapeHtml(q.score)}</span></td><td>${fmt(q.price)}</td><td class="${cls}">${signed(q.change_pct)}</td><td><span class="tag">${escapeHtml(q.signal)}</span></td></tr>`;
+    }).join("");
+    const tableTitle=document.querySelector("#dashboard .table .title h2");
+    const tableSub=document.querySelector("#dashboard .table .title p");
+    if(tableTitle)tableTitle.textContent="真实行情规则评分";
+    if(tableSub)tableSub.textContent=data.method||"公开行情字段规则评分";
+  }
+}
+async function loadRealData(){
+  ensureDataBanner();
+  document.getElementById("market").textContent="正在读取真实行情";
+  try{
+    const response=await fetch(`${REAL_DATA_URL}?v=${Date.now()}`,{cache:"no-store"});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    renderRealData(await response.json());
+    notice("真实行情已刷新");
+  }catch(error){console.error(error);markUnavailable();notice("真实行情暂时不可用")}
+}
+window.scan=loadRealData;
+document.addEventListener("DOMContentLoaded",loadRealData);
+</script>
 </body>
 </html>
