@@ -83,6 +83,7 @@ function markUnavailable(){
   document.getElementById("market").textContent="行情更新失败";
 }
 function renderRealData(data){
+  window.latestRealData=data;
   ensureDataBanner();
   document.getElementById("realSource").textContent=data.source||"公开行情";
   document.getElementById("realUpdated").textContent=`更新 ${data.generated_at_display||"--"}`;
@@ -111,23 +112,41 @@ function renderRealData(data){
     const backtest=panels[0].querySelector(".panel");
     const title=backtest?.querySelector(".title h2");
     const subtitle=backtest?.querySelector(".title p");
-    if(title)title.textContent="策略回测指标";
-    if(subtitle)subtitle.textContent="尚未接入真实历史回测，以下指标不再展示";
-    backtest?.querySelectorAll(".stats b").forEach(node=>node.textContent="--");
-    const line=backtest?.querySelector(".line");if(line)line.style.opacity=".12";
-    const base=backtest?.querySelector(".base");if(base)base.style.opacity=".12";
-    const legend=backtest?.querySelector(".legend");if(legend)legend.textContent="暂无真实回测结果";
+    const bt=data.backtest;
+    if(title)title.textContent=bt?`真实回测 · ${bt.strategy}`:"策略回测指标";
+    if(subtitle)subtitle.textContent=bt?`${bt.start_date} 至 ${bt.end_date} · ${bt.trading_days}个交易日 · 含换仓成本`:"暂无真实回测";
+    const statValues=bt?[`${bt.annualized_return_pct}%`,`${bt.max_drawdown_pct}%`,String(bt.sharpe_ratio),`${bt.daily_win_rate_pct}%`]:["--","--","--","--"];
+    backtest?.querySelectorAll(".stats b").forEach((node,index)=>node.textContent=statValues[index]||"--");
+    const line=backtest?.querySelector(".line");
+    const base=backtest?.querySelector(".base");
+    if(bt?.equity_curve?.length&&line){
+      const values=bt.equity_curve.map(point=>Number(point.value));
+      const min=Math.min(...values),max=Math.max(...values),range=max-min||1;
+      line.setAttribute("points",values.map((value,index)=>`${index*650/(values.length-1)},${180-(value-min)*160/range}`).join(" "));
+      line.style.opacity="1";
+    }
+    if(base)base.style.opacity=".12";
+    const legend=backtest?.querySelector(".legend");
+    if(legend)legend.textContent=bt?`策略 ${bt.total_return_pct>=0?"+":""}${bt.total_return_pct}% · 沪深300 ${bt.benchmark_return_pct>=0?"+":""}${bt.benchmark_return_pct}%`:"暂无真实回测结果";
     const factorPanel=panels[0].querySelectorAll(".panel")[1];
     const factorTitle=factorPanel?.querySelector(".title h2");
     const factorSub=factorPanel?.querySelector(".title p");
-    if(factorTitle)factorTitle.textContent="因子分析";
-    if(factorSub)factorSub.textContent="尚未接入真实历史行情与财务因子";
-    factorPanel?.querySelectorAll(".factor b").forEach(node=>node.textContent="--");
-    factorPanel?.querySelectorAll(".bar i").forEach(node=>node.style.width="0");
+    if(factorTitle)factorTitle.textContent="真实因子评分";
+    if(factorSub)factorSub.textContent=data.factor_method||"基于真实历史行情";
+    const factorNames=["动量","趋势","估值","低波"];
+    const factorKeys=["momentum","trend","valuation","low_volatility"];
+    const factorRows=factorPanel?.querySelectorAll(".factor")||[];
+    factorRows.forEach((row,index)=>{
+      const scores=(data.quotes||[]).map(q=>Number(q.factors?.scores?.[factorKeys[index]])).filter(Number.isFinite);
+      const average=scores.length?Math.round(scores.reduce((a,b)=>a+b,0)/scores.length):0;
+      const name=row.querySelector("span");if(name)name.textContent=factorNames[index];
+      const value=row.querySelector("b");if(value)value.textContent=String(average);
+      const bar=row.querySelector(".bar i");if(bar)bar.style.width=`${average}%`;
+    });
     const aiTitle=factorPanel?.querySelector(".ai b");
     const aiText=factorPanel?.querySelector(".ai p");
-    if(aiTitle)aiTitle.textContent="AI 投研未接入";
-    if(aiText)aiText.textContent="当前仅提供真实行情和透明规则评分，不生成 AI 投资结论。";
+    if(aiTitle)aiTitle.textContent="规则因子说明";
+    if(aiText)aiText.textContent="因子基于历史收盘价、波动率、PE 与 PB 计算；没有使用未来数据，也不是 AI 投资建议。";
   }
 
   const tbody=document.querySelector("#dashboard .table table tbody");
@@ -147,12 +166,27 @@ function renderRealData(data){
     const statusTitle=statusPanel.querySelector(".title h2");
     const statusSub=statusPanel.querySelector(".title p");
     if(statusTitle)statusTitle.textContent="数据与分析状态";
-    if(statusSub)statusSub.textContent="仅已启用真实行情与规则评分";
+    if(statusSub)statusSub.textContent="真实行情、历史回测和规则因子已启用";
     const values=statusPanel.querySelectorAll(".status b");
-    const labels=["真实行情","规则评分","未接入","未接入"];
+    const labels=["真实行情","规则评分","真实回测","真实因子"];
     values.forEach((node,index)=>node.textContent=labels[index]||"未接入");
     const runButton=statusPanel.querySelector(".run");
-    if(runButton){runButton.textContent="真实历史回测未接入";runButton.disabled=true;runButton.style.opacity=".55"}
+    if(runButton){runButton.textContent="回测由自动任务定时计算";runButton.disabled=true;runButton.style.opacity=".75"}
+  }
+  if(typeof modules!=="undefined"){
+    const factorCards=(data.quotes||[]).map(q=>`<article class="item"><h3>${escapeHtml(q.name)} · ${escapeHtml(q.code)}</h3><p>20日动量 ${signed(q.factors?.momentum_20d_pct)} · 年化波动 ${fmt(q.factors?.annualized_volatility_20d_pct)}%</p><div class="item-meta"><span>动量 / 趋势 / 估值 / 低波</span><b>${Object.values(q.factors?.scores||{}).join(" / ")}</b></div></article>`).join("");
+    modules.factors.title="真实历史因子";
+    modules.factors.sub=data.factor_method;
+    modules.factors.html=`<div class="module-grid">${factorCards}</div><div class="result">所有因子均由公开行情字段确定性计算，不包含AI生成数据。</div>`;
+    if(data.backtest){
+      const bt=data.backtest;
+      modules.backtest.title="真实历史回测";
+      modules.backtest.sub=`${bt.strategy} · ${bt.start_date} 至 ${bt.end_date}`;
+      modules.backtest.html=`<div class="panel"><div class="stats"><div><small>总收益</small><b>${bt.total_return_pct}%</b></div><div><small>年化收益</small><b>${bt.annualized_return_pct}%</b></div><div><small>最大回撤</small><b>${bt.max_drawdown_pct}%</b></div><div><small>夏普比率</small><b>${bt.sharpe_ratio}</b></div></div><div class="result"><b>规则</b><br>${escapeHtml(bt.rule)}<br><br>沪深300同期收益：${bt.benchmark_return_pct}% · 调仓次数：${bt.rebalance_count} · 单边成本率：${(bt.transaction_cost_rate*100).toFixed(2)}%</div></div>`;
+    }
+    modules.research.title="AI 投研";
+    modules.research.sub="尚未配置安全的大模型后端";
+    modules.research.html='<div class="panel"><div class="result"><b>未接入</b><br><br>当前不会生成AI投资结论。需要安全后端和API Key后才能启用。</div></div>';
   }
 }
 async function loadRealData(){
