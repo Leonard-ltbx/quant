@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source": "腾讯财经公开行情",
   "source_endpoint": "qt.gtimg.cn",
-  "generated_at": "2026-07-31T18:04:51+08:00",
-  "generated_at_display": "2026-07-31 18:04:51",
+  "generated_at": "2026-08-03T12:26:49+08:00",
+  "generated_at_display": "2026-08-03 12:26:49",
   "method": "行情字段规则评分（涨跌幅、量比、换手率、PE、PB），非AI预测",
   "disclaimer": "数据仅供研究与功能演示，不构成任何投资建议。",
   "watchlist_size": 6,
@@ -21,363 +21,328 @@
     "rule": "每20个交易日，以过去20日收益率排序，等权持有前2只；信号只使用当时及以前数据",
     "transaction_cost_rate": 0.0003,
     "benchmark": "沪深300",
-    "start_date": "2025-05-09",
-    "end_date": "2026-07-31",
+    "start_date": "2025-05-12",
+    "end_date": "2026-08-03",
     "trading_days": 300,
     "rebalance_count": 15,
-    "total_return_pct": 26.72,
-    "annualized_return_pct": 22.01,
-    "benchmark_return_pct": 19.29,
-    "max_drawdown_pct": -18.43,
-    "sharpe_ratio": 1.01,
-    "daily_win_rate_pct": 50.33,
+    "total_return_pct": 23.99,
+    "annualized_return_pct": 19.79,
+    "benchmark_return_pct": 17.07,
+    "max_drawdown_pct": -18.85,
+    "sharpe_ratio": 0.95,
+    "daily_win_rate_pct": 48.67,
     "equity_curve": [
       {
-        "date": "2025-05-09",
+        "date": "2025-05-12",
         "value": 1.0
       },
       {
-        "date": "2025-05-16",
-        "value": 1.028599
+        "date": "2025-05-19",
+        "value": 1.013025
       },
       {
-        "date": "2025-05-23",
-        "value": 1.061604
+        "date": "2025-05-26",
+        "value": 1.010132
       },
       {
-        "date": "2025-05-30",
-        "value": 1.027635
+        "date": "2025-06-03",
+        "value": 0.983896
       },
       {
-        "date": "2025-06-09",
-        "value": 0.992124
+        "date": "2025-06-10",
+        "value": 0.9615
       },
       {
-        "date": "2025-06-16",
-        "value": 1.011991
+        "date": "2025-06-17",
+        "value": 0.98426
       },
       {
-        "date": "2025-06-23",
-        "value": 1.025655
+        "date": "2025-06-24",
+        "value": 1.018526
       },
       {
-        "date": "2025-06-30",
-        "value": 1.041973
+        "date": "2025-07-01",
+        "value": 1.020049
       },
       {
-        "date": "2025-07-07",
-        "value": 1.066892
+        "date": "2025-07-08",
+        "value": 1.041338
       },
       {
-        "date": "2025-07-14",
-        "value": 1.094217
+        "date": "2025-07-15",
+        "value": 1.056648
       },
       {
-        "date": "2025-07-21",
-        "value": 1.113704
+        "date": "2025-07-22",
+        "value": 1.090722
       },
       {
-        "date": "2025-07-28",
-        "value": 1.157204
+        "date": "2025-07-29",
+        "value": 1.12917
       },
       {
-        "date": "2025-08-04",
-        "value": 1.097762
+        "date": "2025-08-05",
+        "value": 1.073494
       },
       {
-        "date": "2025-08-11",
-        "value": 1.114307
+        "date": "2025-08-12",
+        "value": 1.07518
       },
       {
-        "date": "2025-08-18",
-        "value": 1.122173
+        "date": "2025-08-19",
+        "value": 1.075581
       },
       {
-        "date": "2025-08-25",
-        "value": 1.168019
+        "date": "2025-08-26",
+        "value": 1.122234
       },
       {
-        "date": "2025-09-01",
-        "value": 1.138056
+        "date": "2025-09-02",
+        "value": 1.098905
       },
       {
-        "date": "2025-09-08",
-        "value": 1.179711
+        "date": "2025-09-09",
+        "value": 1.138284
       },
       {
-        "date": "2025-09-15",
-        "value": 1.22212
+        "date": "2025-09-16",
+        "value": 1.176486
       },
       {
-        "date": "2025-09-22",
-        "value": 1.227998
+        "date": "2025-09-23",
+        "value": 1.194066
       },
       {
-        "date": "2025-09-29",
-        "value": 1.27083
+        "date": "2025-09-30",
+        "value": 1.242358
       },
       {
-        "date": "2025-10-14",
-        "value": 1.196374
+        "date": "2025-10-15",
+        "value": 1.198732
       },
       {
-        "date": "2025-10-21",
-        "value": 1.229648
+        "date": "2025-10-22",
+        "value": 1.203407
       },
       {
-        "date": "2025-10-28",
-        "value": 1.260917
+        "date": "2025-10-29",
+        "value": 1.235831
       },
       {
-        "date": "2025-11-04",
-        "value": 1.255551
+        "date": "2025-11-05",
+        "value": 1.213034
       },
       {
-        "date": "2025-11-11",
-        "value": 1.256971
+        "date": "2025-11-12",
+        "value": 1.232572
       },
       {
-        "date": "2025-11-18",
-        "value": 1.260386
+        "date": "2025-11-19",
+        "value": 1.240564
       },
       {
-        "date": "2025-11-25",
-        "value": 1.264489
+        "date": "2025-11-26",
+        "value": 1.234806
       },
       {
-        "date": "2025-12-02",
-        "value": 1.259174
+        "date": "2025-12-03",
+        "value": 1.216002
       },
       {
-        "date": "2025-12-09",
-        "value": 1.242715
+        "date": "2025-12-10",
+        "value": 1.187405
       },
       {
-        "date": "2025-12-16",
-        "value": 1.220524
+        "date": "2025-12-17",
+        "value": 1.203856
       },
       {
-        "date": "2025-12-23",
-        "value": 1.221417
+        "date": "2025-12-24",
+        "value": 1.187156
       },
       {
-        "date": "2025-12-30",
-        "value": 1.220625
+        "date": "2025-12-31",
+        "value": 1.171808
       },
       {
-        "date": "2026-01-08",
-        "value": 1.244766
+        "date": "2026-01-09",
+        "value": 1.195331
       },
       {
-        "date": "2026-01-15",
-        "value": 1.207473
+        "date": "2026-01-16",
+        "value": 1.155829
       },
       {
-        "date": "2026-01-22",
-        "value": 1.161851
+        "date": "2026-01-23",
+        "value": 1.114915
       },
       {
-        "date": "2026-01-29",
-        "value": 1.234754
+        "date": "2026-01-30",
+        "value": 1.167961
       },
       {
-        "date": "2026-02-05",
-        "value": 1.273928
+        "date": "2026-02-06",
+        "value": 1.231324
       },
       {
-        "date": "2026-02-12",
-        "value": 1.219829
+        "date": "2026-02-13",
+        "value": 1.215194
       },
       {
-        "date": "2026-02-27",
-        "value": 1.203273
+        "date": "2026-03-02",
+        "value": 1.183542
       },
       {
-        "date": "2026-03-06",
-        "value": 1.171085
+        "date": "2026-03-09",
+        "value": 1.149145
       },
       {
-        "date": "2026-03-13",
-        "value": 1.249101
+        "date": "2026-03-16",
+        "value": 1.247781
       },
       {
-        "date": "2026-03-20",
-        "value": 1.274587
+        "date": "2026-03-23",
+        "value": 1.218242
       },
       {
-        "date": "2026-03-27",
-        "value": 1.274784
+        "date": "2026-03-30",
+        "value": 1.248494
       },
       {
-        "date": "2026-04-03",
-        "value": 1.227231
+        "date": "2026-04-07",
+        "value": 1.196569
       },
       {
-        "date": "2026-04-13",
-        "value": 1.284371
+        "date": "2026-04-14",
+        "value": 1.271324
       },
       {
-        "date": "2026-04-20",
-        "value": 1.278389
+        "date": "2026-04-21",
+        "value": 1.28116
       },
       {
-        "date": "2026-04-27",
-        "value": 1.288938
+        "date": "2026-04-28",
+        "value": 1.259024
       },
       {
-        "date": "2026-05-07",
-        "value": 1.299092
+        "date": "2026-05-08",
+        "value": 1.258904
       },
       {
-        "date": "2026-05-14",
-        "value": 1.228744
+        "date": "2026-05-15",
+        "value": 1.189961
       },
       {
-        "date": "2026-05-21",
-        "value": 1.17164
+        "date": "2026-05-22",
+        "value": 1.152353
       },
       {
-        "date": "2026-05-28",
-        "value": 1.163234
+        "date": "2026-05-29",
+        "value": 1.168718
       },
       {
-        "date": "2026-06-04",
-        "value": 1.161663
+        "date": "2026-06-05",
+        "value": 1.139564
       },
       {
-        "date": "2026-06-11",
-        "value": 1.192585
+        "date": "2026-06-12",
+        "value": 1.162036
       },
       {
-        "date": "2026-06-18",
-        "value": 1.115615
+        "date": "2026-06-22",
+        "value": 1.100326
       },
       {
-        "date": "2026-06-26",
-        "value": 1.100305
+        "date": "2026-06-29",
+        "value": 1.101445
       },
       {
-        "date": "2026-07-03",
-        "value": 1.136509
+        "date": "2026-07-06",
+        "value": 1.141388
       },
       {
-        "date": "2026-07-10",
-        "value": 1.160734
+        "date": "2026-07-13",
+        "value": 1.152417
       },
       {
-        "date": "2026-07-17",
-        "value": 1.20601
+        "date": "2026-07-20",
+        "value": 1.206077
       },
       {
-        "date": "2026-07-24",
-        "value": 1.237897
+        "date": "2026-07-27",
+        "value": 1.206382
       },
       {
-        "date": "2026-07-31",
-        "value": 1.267191
+        "date": "2026-08-03",
+        "value": 1.239864
       }
     ]
   },
   "quotes": [
     {
-      "code": "000858",
-      "name": "五 粮 液",
-      "price": 78.0,
-      "pre_close": 78.56,
-      "open": 76.99,
-      "volume": 49786000.0,
-      "change_amount": -0.56,
-      "change_pct": -0.71,
-      "high": 78.68,
-      "low": 76.59,
-      "turnover_rate": 1.28,
-      "pe_ratio": 24.03,
-      "amplitude": 2.66,
-      "circ_mv_billion": 3027.58,
-      "total_mv_billion": 3027.65,
-      "pb_ratio": 2.57,
-      "volume_ratio": 1.27,
-      "quote_time": "20260731161448",
-      "score": 57,
-      "signal": "规则评分中性",
+      "code": "600036",
+      "name": "招商银行",
+      "price": 40.17,
+      "pre_close": 39.62,
+      "open": 39.88,
+      "volume": 69448600.0,
+      "change_amount": 0.55,
+      "change_pct": 1.39,
+      "high": 40.42,
+      "low": 39.8,
+      "turnover_rate": 0.34,
+      "pe_ratio": 6.72,
+      "amplitude": 1.56,
+      "circ_mv_billion": 8286.65,
+      "total_mv_billion": 10130.81,
+      "pb_ratio": 0.92,
+      "volume_ratio": 1.19,
+      "quote_time": "20260803120540",
+      "score": 64,
+      "signal": "规则评分偏强",
       "factors": {
-        "momentum_20d_pct": 10.43,
-        "momentum_60d_pct": -13.35,
-        "annualized_volatility_20d_pct": 36.08,
-        "price_vs_ma20_pct": 6.53,
-        "max_drawdown_60d_pct": -23.71,
+        "momentum_20d_pct": 9.37,
+        "momentum_60d_pct": 8.75,
+        "annualized_volatility_20d_pct": 21.18,
+        "price_vs_ma20_pct": 4.73,
+        "max_drawdown_60d_pct": -10.02,
         "scores": {
-          "momentum": 71,
-          "trend": 70,
-          "valuation": 60,
-          "low_volatility": 46
-        }
-      }
-    },
-    {
-      "code": "000333",
-      "name": "美的集团",
-      "price": 87.6,
-      "pre_close": 88.95,
-      "open": 87.01,
-      "volume": 47504500.0,
-      "change_amount": -1.35,
-      "change_pct": -1.52,
-      "high": 87.79,
-      "low": 84.51,
-      "turnover_rate": 0.69,
-      "pe_ratio": 15.12,
-      "amplitude": 3.69,
-      "circ_mv_billion": 6028.88,
-      "total_mv_billion": 6680.57,
-      "pb_ratio": 3.28,
-      "volume_ratio": 1.36,
-      "quote_time": "20260731161403",
-      "score": 54,
-      "signal": "规则评分中性",
-      "factors": {
-        "momentum_20d_pct": 12.37,
-        "momentum_60d_pct": 15.13,
-        "annualized_volatility_20d_pct": 19.53,
-        "price_vs_ma20_pct": 5.46,
-        "max_drawdown_60d_pct": -10.84,
-        "scores": {
-          "momentum": 75,
-          "trend": 66,
-          "valuation": 70,
-          "low_volatility": 71
+          "momentum": 69,
+          "trend": 64,
+          "valuation": 80,
+          "low_volatility": 68
         }
       }
     },
     {
       "code": "601318",
       "name": "中国平安",
-      "price": 54.9,
-      "pre_close": 55.8,
-      "open": 54.91,
-      "volume": 105513000.0,
-      "change_amount": -0.9,
-      "change_pct": -1.61,
-      "high": 55.03,
-      "low": 54.2,
-      "turnover_rate": 0.99,
-      "pe_ratio": 7.49,
-      "amplitude": 1.49,
-      "circ_mv_billion": 5852.38,
-      "total_mv_billion": 9941.1,
+      "price": 55.15,
+      "pre_close": 54.9,
+      "open": 54.8,
+      "volume": 40601700.0,
+      "change_amount": 0.25,
+      "change_pct": 0.46,
+      "high": 55.45,
+      "low": 54.7,
+      "turnover_rate": 0.38,
+      "pe_ratio": 7.52,
+      "amplitude": 1.37,
+      "circ_mv_billion": 5879.03,
+      "total_mv_billion": 9986.36,
       "pb_ratio": 1.01,
-      "volume_ratio": 1.29,
-      "quote_time": "20260731161458",
-      "score": 53,
+      "volume_ratio": 0.94,
+      "quote_time": "20260803120539",
+      "score": 58,
       "signal": "规则评分中性",
       "factors": {
-        "momentum_20d_pct": 11.84,
-        "momentum_60d_pct": -5.82,
-        "annualized_volatility_20d_pct": 26.27,
-        "price_vs_ma20_pct": 5.54,
+        "momentum_20d_pct": 10.08,
+        "momentum_60d_pct": -5.42,
+        "annualized_volatility_20d_pct": 25.68,
+        "price_vs_ma20_pct": 5.51,
         "max_drawdown_60d_pct": -19.06,
         "scores": {
-          "momentum": 74,
+          "momentum": 70,
           "trend": 67,
           "valuation": 80,
           "low_volatility": 61
@@ -385,70 +350,70 @@
       }
     },
     {
-      "code": "600036",
-      "name": "招商银行",
-      "price": 39.62,
-      "pre_close": 40.55,
-      "open": 39.85,
-      "volume": 149155000.0,
-      "change_amount": -0.93,
-      "change_pct": -2.29,
-      "high": 40.17,
-      "low": 39.04,
-      "turnover_rate": 0.72,
-      "pe_ratio": 6.63,
-      "amplitude": 2.79,
-      "circ_mv_billion": 8173.19,
-      "total_mv_billion": 9992.1,
-      "pb_ratio": 0.9,
-      "volume_ratio": 1.41,
-      "quote_time": "20260731161440",
-      "score": 52,
+      "code": "000858",
+      "name": "五 粮 液",
+      "price": 77.85,
+      "pre_close": 78.0,
+      "open": 78.0,
+      "volume": 18764400.0,
+      "change_amount": -0.15,
+      "change_pct": -0.19,
+      "high": 78.66,
+      "low": 77.5,
+      "turnover_rate": 0.48,
+      "pe_ratio": 23.98,
+      "amplitude": 1.49,
+      "circ_mv_billion": 3021.76,
+      "total_mv_billion": 3021.83,
+      "pb_ratio": 2.56,
+      "volume_ratio": 0.86,
+      "quote_time": "20260803120530",
+      "score": 54,
       "signal": "规则评分中性",
       "factors": {
-        "momentum_20d_pct": 10.59,
-        "momentum_60d_pct": 7.23,
-        "annualized_volatility_20d_pct": 22.19,
-        "price_vs_ma20_pct": 3.76,
-        "max_drawdown_60d_pct": -10.02,
+        "momentum_20d_pct": 9.37,
+        "momentum_60d_pct": -13.07,
+        "annualized_volatility_20d_pct": 36.15,
+        "price_vs_ma20_pct": 5.84,
+        "max_drawdown_60d_pct": -23.43,
         "scores": {
-          "momentum": 71,
-          "trend": 61,
-          "valuation": 80,
-          "low_volatility": 67
+          "momentum": 69,
+          "trend": 68,
+          "valuation": 60,
+          "low_volatility": 46
         }
       }
     },
     {
       "code": "600519",
       "name": "贵州茅台",
-      "price": 1350.6,
-      "pre_close": 1361.76,
-      "open": 1330.03,
-      "volume": 5512800.0,
-      "change_amount": -11.16,
-      "change_pct": -0.82,
-      "high": 1355.72,
-      "low": 1325.77,
-      "turnover_rate": 0.44,
-      "pe_ratio": 20.41,
-      "amplitude": 2.2,
-      "circ_mv_billion": 16883.6,
-      "total_mv_billion": 16883.6,
+      "price": 1351.0,
+      "pre_close": 1350.6,
+      "open": 1350.6,
+      "volume": 2330100.0,
+      "change_amount": 0.4,
+      "change_pct": 0.03,
+      "high": 1363.35,
+      "low": 1346.0,
+      "turnover_rate": 0.19,
+      "pe_ratio": 20.42,
+      "amplitude": 1.28,
+      "circ_mv_billion": 16888.6,
+      "total_mv_billion": 16888.6,
       "pb_ratio": 7.25,
-      "volume_ratio": 1.08,
-      "quote_time": "20260731161450",
-      "score": 51,
+      "volume_ratio": 0.84,
+      "quote_time": "20260803120549",
+      "score": 52,
       "signal": "规则评分中性",
       "factors": {
-        "momentum_20d_pct": 13.07,
-        "momentum_60d_pct": 0.56,
-        "annualized_volatility_20d_pct": 29.72,
-        "price_vs_ma20_pct": 6.58,
-        "max_drawdown_60d_pct": -13.11,
+        "momentum_20d_pct": 11.94,
+        "momentum_60d_pct": 0.45,
+        "annualized_volatility_20d_pct": 29.76,
+        "price_vs_ma20_pct": 6.01,
+        "max_drawdown_60d_pct": -12.35,
         "scores": {
-          "momentum": 76,
-          "trend": 70,
+          "momentum": 74,
+          "trend": 68,
           "valuation": 45,
           "low_volatility": 55
         }
@@ -457,35 +422,70 @@
     {
       "code": "300750",
       "name": "宁德时代",
-      "price": 395.3,
-      "pre_close": 401.88,
-      "open": 395.55,
-      "volume": 39414900.0,
-      "change_amount": -6.58,
-      "change_pct": -1.64,
-      "high": 400.2,
-      "low": 389.0,
-      "turnover_rate": 0.93,
-      "pe_ratio": 21.52,
-      "amplitude": 2.79,
-      "circ_mv_billion": 16840.1,
-      "total_mv_billion": 18289.17,
-      "pb_ratio": 4.82,
-      "volume_ratio": 1.01,
-      "quote_time": "20260731161442",
+      "price": 393.27,
+      "pre_close": 395.3,
+      "open": 392.6,
+      "volume": 12631900.0,
+      "change_amount": -2.03,
+      "change_pct": -0.51,
+      "high": 395.88,
+      "low": 389.6,
+      "turnover_rate": 0.3,
+      "pe_ratio": 21.41,
+      "amplitude": 1.59,
+      "circ_mv_billion": 16753.62,
+      "total_mv_billion": 18195.25,
+      "pb_ratio": 4.8,
+      "volume_ratio": 0.6,
+      "quote_time": "20260803120554",
       "score": 50,
       "signal": "规则评分中性",
       "factors": {
-        "momentum_20d_pct": 4.03,
-        "momentum_60d_pct": -12.47,
-        "annualized_volatility_20d_pct": 48.34,
-        "price_vs_ma20_pct": 4.86,
+        "momentum_20d_pct": 5.01,
+        "momentum_60d_pct": -10.01,
+        "annualized_volatility_20d_pct": 48.02,
+        "price_vs_ma20_pct": 4.07,
         "max_drawdown_60d_pct": -21.82,
         "scores": {
-          "momentum": 58,
-          "trend": 65,
+          "momentum": 60,
+          "trend": 62,
           "valuation": 60,
-          "low_volatility": 27
+          "low_volatility": 28
+        }
+      }
+    },
+    {
+      "code": "000333",
+      "name": "美的集团",
+      "price": 86.25,
+      "pre_close": 87.6,
+      "open": 87.39,
+      "volume": 18527900.0,
+      "change_amount": -1.35,
+      "change_pct": -1.54,
+      "high": 87.97,
+      "low": 86.12,
+      "turnover_rate": 0.27,
+      "pe_ratio": 14.88,
+      "amplitude": 2.11,
+      "circ_mv_billion": 5937.06,
+      "total_mv_billion": 6578.71,
+      "pb_ratio": 3.23,
+      "volume_ratio": 0.93,
+      "quote_time": "20260803120524",
+      "score": 49,
+      "signal": "规则评分中性",
+      "factors": {
+        "momentum_20d_pct": 7.81,
+        "momentum_60d_pct": 12.48,
+        "annualized_volatility_20d_pct": 19.38,
+        "price_vs_ma20_pct": 3.44,
+        "max_drawdown_60d_pct": -10.84,
+        "scores": {
+          "momentum": 66,
+          "trend": 60,
+          "valuation": 70,
+          "low_volatility": 71
         }
       }
     }
