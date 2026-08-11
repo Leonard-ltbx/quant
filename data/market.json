@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source": "腾讯财经公开行情",
   "source_endpoint": "qt.gtimg.cn",
-  "generated_at": "2026-08-11T15:54:26+08:00",
-  "generated_at_display": "2026-08-11 15:54:26",
+  "generated_at": "2026-08-11T16:49:25+08:00",
+  "generated_at_display": "2026-08-11 16:49:25",
   "method": "行情字段规则评分（涨跌幅、量比、换手率、PE、PB），非AI预测",
   "disclaimer": "数据仅供研究与功能演示，不构成任何投资建议。",
   "watchlist_size": 6,
@@ -297,7 +297,7 @@
       "total_mv_billion": 6531.45,
       "pb_ratio": 3.2,
       "volume_ratio": 0.61,
-      "quote_time": "20260811155412",
+      "quote_time": "20260811161412",
       "score": 54,
       "signal": "规则评分中性",
       "factors": {
@@ -332,7 +332,7 @@
       "total_mv_billion": 9823.13,
       "pb_ratio": 0.89,
       "volume_ratio": 0.58,
-      "quote_time": "20260811155414",
+      "quote_time": "20260811161444",
       "score": 52,
       "signal": "规则评分中性",
       "factors": {
@@ -367,7 +367,7 @@
       "total_mv_billion": 16832.35,
       "pb_ratio": 7.23,
       "volume_ratio": 0.7,
-      "quote_time": "20260811155401",
+      "quote_time": "20260811161431",
       "score": 50,
       "signal": "规则评分中性",
       "factors": {
@@ -402,7 +402,7 @@
       "total_mv_billion": 9515.57,
       "pb_ratio": 0.96,
       "volume_ratio": 0.95,
-      "quote_time": "20260811155420",
+      "quote_time": "20260811161450",
       "score": 50,
       "signal": "规则评分中性",
       "factors": {
@@ -437,7 +437,7 @@
       "total_mv_billion": 2911.21,
       "pb_ratio": 2.47,
       "volume_ratio": 0.84,
-      "quote_time": "20260811155357",
+      "quote_time": "20260811161457",
       "score": 49,
       "signal": "规则评分中性",
       "factors": {
@@ -472,7 +472,7 @@
       "total_mv_billion": 18062.46,
       "pb_ratio": 4.84,
       "volume_ratio": 0.54,
-      "quote_time": "20260811155400",
+      "quote_time": "20260811161400",
       "score": 48,
       "signal": "规则评分中性",
       "factors": {
