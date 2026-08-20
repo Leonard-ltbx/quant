@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source": "腾讯财经公开行情",
   "source_endpoint": "qt.gtimg.cn",
-  "generated_at": "2026-08-20T11:58:14+08:00",
-  "generated_at_display": "2026-08-20 11:58:14",
+  "generated_at": "2026-08-20T12:41:37+08:00",
+  "generated_at_display": "2026-08-20 12:41:37",
   "method": "行情字段规则评分（涨跌幅、量比、换手率、PE、PB），非AI预测",
   "disclaimer": "数据仅供研究与功能演示，不构成任何投资建议。",
   "watchlist_size": 6,
@@ -296,8 +296,8 @@
       "circ_mv_billion": 5845.24,
       "total_mv_billion": 6476.85,
       "pb_ratio": 3.18,
-      "volume_ratio": 1.04,
-      "quote_time": "20260820115730",
+      "volume_ratio": 1.03,
+      "quote_time": "20260820120530",
       "score": 57,
       "signal": "规则评分中性",
       "factors": {
@@ -331,9 +331,9 @@
       "circ_mv_billion": 16414.52,
       "total_mv_billion": 17826.96,
       "pb_ratio": 4.78,
-      "volume_ratio": 1.21,
-      "quote_time": "20260820115800",
-      "score": 55,
+      "volume_ratio": 1.2,
+      "quote_time": "20260820120500",
+      "score": 54,
       "signal": "规则评分中性",
       "factors": {
         "momentum_20d_pct": 0.19,
@@ -346,41 +346,6 @@
           "trend": 44,
           "valuation": 60,
           "low_volatility": 54
-        }
-      }
-    },
-    {
-      "code": "600036",
-      "name": "招商银行",
-      "price": 38.62,
-      "pre_close": 39.15,
-      "open": 38.8,
-      "volume": 47741900.0,
-      "change_amount": -0.53,
-      "change_pct": -1.35,
-      "high": 39.07,
-      "low": 38.47,
-      "turnover_rate": 0.23,
-      "pe_ratio": 6.46,
-      "amplitude": 1.53,
-      "circ_mv_billion": 7966.9,
-      "total_mv_billion": 9739.9,
-      "pb_ratio": 0.88,
-      "volume_ratio": 1.37,
-      "quote_time": "20260820115746",
-      "score": 55,
-      "signal": "规则评分中性",
-      "factors": {
-        "momentum_20d_pct": -0.75,
-        "momentum_60d_pct": 7.29,
-        "annualized_volatility_20d_pct": 21.1,
-        "price_vs_ma20_pct": -1.23,
-        "max_drawdown_60d_pct": -10.02,
-        "scores": {
-          "momentum": 49,
-          "trend": 46,
-          "valuation": 80,
-          "low_volatility": 68
         }
       }
     },
@@ -401,8 +366,8 @@
       "circ_mv_billion": 2796.24,
       "total_mv_billion": 2796.31,
       "pb_ratio": 2.37,
-      "volume_ratio": 0.72,
-      "quote_time": "20260820115754",
+      "volume_ratio": 0.71,
+      "quote_time": "20260820120554",
       "score": 54,
       "signal": "规则评分中性",
       "factors": {
@@ -416,6 +381,41 @@
           "trend": 38,
           "valuation": 60,
           "low_volatility": 64
+        }
+      }
+    },
+    {
+      "code": "600036",
+      "name": "招商银行",
+      "price": 38.62,
+      "pre_close": 39.15,
+      "open": 38.8,
+      "volume": 47741900.0,
+      "change_amount": -0.53,
+      "change_pct": -1.35,
+      "high": 39.07,
+      "low": 38.47,
+      "turnover_rate": 0.23,
+      "pe_ratio": 6.46,
+      "amplitude": 1.53,
+      "circ_mv_billion": 7966.9,
+      "total_mv_billion": 9739.9,
+      "pb_ratio": 0.88,
+      "volume_ratio": 1.35,
+      "quote_time": "20260820120546",
+      "score": 54,
+      "signal": "规则评分中性",
+      "factors": {
+        "momentum_20d_pct": -0.75,
+        "momentum_60d_pct": 7.29,
+        "annualized_volatility_20d_pct": 21.1,
+        "price_vs_ma20_pct": -1.23,
+        "max_drawdown_60d_pct": -10.02,
+        "scores": {
+          "momentum": 49,
+          "trend": 46,
+          "valuation": 80,
+          "low_volatility": 68
         }
       }
     },
@@ -437,7 +437,7 @@
       "total_mv_billion": 9372.52,
       "pb_ratio": 0.95,
       "volume_ratio": 0.96,
-      "quote_time": "20260820115748",
+      "quote_time": "20260820120548",
       "score": 53,
       "signal": "规则评分中性",
       "factors": {
@@ -471,8 +471,8 @@
       "circ_mv_billion": 16148.93,
       "total_mv_billion": 16148.93,
       "pb_ratio": 6.43,
-      "volume_ratio": 0.72,
-      "quote_time": "20260820115755",
+      "volume_ratio": 0.71,
+      "quote_time": "20260820120555",
       "score": 45,
       "signal": "规则评分中性",
       "factors": {
